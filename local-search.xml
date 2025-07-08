@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>鸿蒙系统中登录页自动填充 bug 导致的 input 背景色覆盖</title>
+    <link href="/2025/07/08/harmonyos-autofill-bug/"/>
+    <url>/2025/07/08/harmonyos-autofill-bug/</url>
+    
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>当在鸿蒙系统中，当检测到页面中的 <code>input</code> 且 <code>type=&quot;password&quot;</code> 的元素时，会在聚焦此元素或其前一个 <code>input</code> 元素时，异常触发自动填充，导致这两个 <code>input</code> 元素的背景色被覆盖。</p><p><img src="/img/harmonyos-autofill-bug.jpg" alt="鸿蒙自动填充问题示例"></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>全局添加以下样式，隐藏自动填充时的背景色：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">input</span>:-webkit-autofill &#123;<br>  -webkit-<span class="hljs-attribute">background-clip</span>: text;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>鸿蒙系统中微信网页 JS-SDK 由 iframe 导致 invalid signature 和 permission denied 报错</title>
     <link href="/2025/06/25/harmonyos-wechat-iframe-bug/"/>
     <url>/2025/06/25/harmonyos-wechat-iframe-bug/</url>
